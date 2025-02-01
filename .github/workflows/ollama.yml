@@ -17,17 +17,21 @@ jobs:
     - name: 删除旧脚本
       run: |
         rm -f ollama/install.sh || true
+        rm -f ollama/install-zh_CN.sh.bak || true
 
     - name: 运行 install.py
       run: python ollama/py/install.py > ollama.txt
 
     - name: 创建install.sh
-      run: cp ollama/install.sh.bak ollama/install.sh
+      run: |
+        cp ollama/install.sh.bak ollama/install.sh
+        cp ollama/install-zh_CN.sh.bak ollama/install-zh_CN.sh
 
     - name: 更新 install.sh
       run: |
         OLLAMA=$(cat ollama.txt)
         sed -i "s/<version>/$OLLAMA/" ollama/install.sh
+        sed -i "s/<version>/$OLLAMA/" ollama/install-zh_CN.sh
         
     - name: 删除ollama.txt
       run: |
