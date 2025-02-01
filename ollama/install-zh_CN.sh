@@ -78,7 +78,7 @@ fi
 status "Installing ollama to $OLLAMA_INSTALL_DIR"
 $SUDO install -o0 -g0 -m755 -d $BINDIR
 $SUDO install -o0 -g0 -m755 -d "$OLLAMA_INSTALL_DIR"
-status "Downloading Linux ${ARCH} bundle"
+status "正在下载 Linux ${ARCH} 安装包"
 curl --fail --show-error --location --progress-bar \
     "https://gh.zhaojun.im/https://github.com/ollama/ollama/releases/download/v0.5.7/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
     $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
@@ -118,18 +118,18 @@ configure_systemd() {
         $SUDO useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
     fi
     if getent group render >/dev/null 2>&1; then
-        status "Adding ollama user to render group..."
+        status "正在将 ollama 用户添加到 render 组..."
         $SUDO usermod -a -G render ollama
     fi
     if getent group video >/dev/null 2>&1; then
-        status "Adding ollama user to video group..."
+        status "将 ollama 用户添加到 video 组..."
         $SUDO usermod -a -G video ollama
     fi
 
-    status "Adding current user to ollama group..."
+    status "将当前用户添加到 ollama 组..."
     $SUDO usermod -a -G ollama $(whoami)
 
-    status "Creating ollama systemd service..."
+    status "正在创建ollama systemd 服务..."
     cat <<EOF | $SUDO tee /etc/systemd/system/ollama.service >/dev/null
 [Unit]
 Description=Ollama Service
@@ -221,7 +221,7 @@ if ! check_gpu lspci nvidia && ! check_gpu lshw nvidia && ! check_gpu lspci amdg
 fi
 
 if check_gpu lspci amdgpu || check_gpu lshw amdgpu; then
-    status "Downloading Linux ROCm ${ARCH} bundle"
+    status "正在下载 Linux ROCm ${ARCH} bundle"
     curl --fail --show-error --location --progress-bar \
         "https://gh.zhaojun.im/https://github.com/ollama/ollama/releases/download/v0.5.7/ollama-linux-${ARCH}-rocm.tgz${VER_PARAM}" | \
         $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
