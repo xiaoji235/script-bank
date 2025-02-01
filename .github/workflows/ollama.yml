@@ -16,11 +16,10 @@ jobs:
 
     - name: 删除旧脚本
       run: |
-        python ollama/py/install.py > ollama.txt
         rm -f ollama/install.sh || true
 
     - name: 运行 install.py
-      run: python ollama/py/install.py > version.txt
+      run: python ollama/py/install.py > ollama.txt
 
     - name: 创建install.sh
       run: cp ollama/install.sh.bak ollama/install.sh
