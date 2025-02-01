@@ -1,0 +1,24 @@
+name: 更新ollama版本
+
+on:
+  push:
+  schedule:
+    - cron: "0 */12 * * *" # 每隔12h更新版本号
+  workflow_dispatch:
+
+jobs:
+  ollama-version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: 运行 install.py
+      run: python ollama/install.py > version.txt
+
+    - name: 创建install.sh
+      run: cp ollama/install.sh.bak install.sh
+
+    - name: 更新 install.sh
+      run: sed -i 's/<version>/$(cat version.txt)/g' install.sh
