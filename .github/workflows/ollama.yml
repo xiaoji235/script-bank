@@ -28,7 +28,7 @@ jobs:
     - name: 更新 install.sh
       run: |
         OLLAMA=$(cat ollama.txt)
-        sed -i 's/<version>/$OLLAMA/g' ollama/install.sh
+        sed -i 's|<version>|$OLLAMA|g' ollama/install.sh
         
     - name: 删除ollama.txt
       run: |
