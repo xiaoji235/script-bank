@@ -14,11 +14,28 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: 删除旧脚本
+      run: |
+        python ollama/py/install.py > version.txt
+        rm -f ollama/install.sh || true
+
     - name: 运行 install.py
       run: python ollama/py/install.py > version.txt
 
     - name: 创建install.sh
-      run: cp ollama/install.sh.bak install.sh
+      run: cp ollama/install.sh.bak ollama/install.sh
 
     - name: 更新 install.sh
-      run: sed -i 's/<version>/$(cat version.txt)/g' install.sh
+      run: |
+        sed -i 's/<version>/$(cat version.txt)/g' ollama/install.sh
+
+    - name: 推送更新
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        if [[ `git status --porcelain` ]]; then
+          git commit -m "版本更新" && git push
+        else
+          echo "版本无变化。"
+        fi
