@@ -17,7 +17,7 @@ jobs:
     - name: 删除旧脚本
       run: |
         rm -f ollama/install.sh || true
-        rm -f ollama/install-zh_CN.sh.bak || true
+        rm -f ollama/install-zh_CN.sh || true
 
     - name: 运行 install.py
       run: python ollama/py/install.py > ollama.txt
