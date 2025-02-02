@@ -23,7 +23,7 @@ repeat_until_success git clone https://gh.zhaojun.im/https://github.com/ollama/o
 cd ollama || { echo "更改目录失败"; exit 1; }
 
 echo "生成 Go 代码..."
-eval $(go env)
+eval $(go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct)
 go generate ./... > /dev/null 2>&1
 
 echo "正在构建 ollama..."
