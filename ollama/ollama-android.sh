@@ -5,10 +5,10 @@ repeat_until_success() {
   while true; do
     "$@" > /dev/null 2>&1
     if [ $? -eq 0 ]; then
-      echo "Success: $*"
+      echo "成功: $*"
       break
     else
-      echo "Retrying: $*"
+      echo "正在重试: $*"
       sleep 2
     fi
   done
