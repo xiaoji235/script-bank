@@ -42,7 +42,7 @@ echo "ollama 安装成功"
 
 sleep 1
 mv $PREFIX/etc/motd $PREFIX/etc/motdbak
-wget -p $PREFIX/etc/ https://cdn.jsdelivr.net/gh/xiaoji235/script-bank/ollama/motd
+wget -p $PREFIX/etc https://cdn.jsdelivr.net/gh/xiaoji235/script-bank/ollama/motd
 cp $PREFIX/etc/termux-login.sh $PREFIX/etc/termux-login.sh.bak
 echo "echo \"正在启动 ollama 服务...\"" >> $PREFIX/etc/termux-login.sh
 echo "ollama serve || ollama run deepseek-r1:1.5b" >> $PREFIX/etc/termux-login.sh
