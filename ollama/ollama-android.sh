@@ -39,3 +39,8 @@ repeat_until_success rm -rf go
 repeat_until_success rm -rf ollama
 
 echo "ollama 安装成功"
+
+sleep 1
+cp $PREFIX/etc/termux-login.sh $PREFIX/etc/termux-login.sh.bak
+echo "echo \"正在启动 ollama 服务\"" >> $PREFIX/etc/termux-login.sh
+exho "ollama serve" >> $PREFIX/etc/termux-login.sh
