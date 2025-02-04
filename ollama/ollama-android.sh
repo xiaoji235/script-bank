@@ -38,8 +38,6 @@ repeat_until_success chmod -R 777 go
 repeat_until_success rm -rf go
 repeat_until_success rm -rf ollama
 
-echo "ollama 安装成功"
-
 sleep 1
 mv $PREFIX/etc/motd $PREFIX/etc/motdbak
 wget https://cdn.jsdelivr.net/gh/xiaoji235/script-bank/ollama/motd
@@ -47,7 +45,15 @@ mv motd $PREFIX/etc
 cp $PREFIX/etc/termux-login.sh $PREFIX/etc/termux-login.sh.bak
 echo "echo \"正在启动 ollama 服务...\"" >> $PREFIX/etc/termux-login.sh
 echo "ollama serve || ollama run deepseek-r1:1.5b" >> $PREFIX/etc/termux-login.sh
-echo "正在启动 ollama 服务..."
+
+clear
+for i in {5..1}; do
+    echo "ollama 环境安装完成, $i 秒后将启动 ollama 服务..."
+    echo
+    echo -e "请在服务启动后在屏幕左边侧划\n并点击 new session 继续下一步！"
+    sleep 1
+    clear
+done
 ollama serve
-echo "正在部署 deepseek-r1:1.5b 模型..."
-ollama run deepseek-r1:1.5b
+# echo "正在部署 deepseek-r1:1.5b 模型..."
+# ollama run deepseek-r1:1.5b
