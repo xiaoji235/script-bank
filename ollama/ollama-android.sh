@@ -47,10 +47,10 @@ echo "echo \"正在启动 ollama 服务...\"" >> $PREFIX/etc/termux-login.sh
 echo "ollama serve || ollama run deepseek-r1:1.5b" >> $PREFIX/etc/termux-login.sh
 
 clear
-for i in {5..1}; do
+for i in {10..0}; do
     echo "ollama 环境安装完成, $i 秒后将启动 ollama 服务..."
     echo
-    echo -e "请在服务启动后在屏幕左边侧划\n并点击 new session 继续下一步！"
+    echo -e "请在服务启动之后在屏幕左边侧划\n并点击 new session 继续下一步！"
     sleep 1
     clear
 done
