@@ -40,7 +40,7 @@ repeat_until_success rm -rf ollama
 
 sleep 1
 mv $PREFIX/etc/motd $PREFIX/etc/motdbak
-wget https://cdn.jsdelivr.net/gh/xiaoji235/script-bank/ollama/motd
+wget https://cdn.jsdelivr.net/gh/xiaoji235/script-bank/ollama/motd-8b
 mv motd-8b $PREFIX/etc/motd
 cp $PREFIX/etc/termux-login.sh $PREFIX/etc/termux-login.sh.bak
 echo "echo \"正在启动 ollama 服务...\"" >> $PREFIX/etc/termux-login.sh
