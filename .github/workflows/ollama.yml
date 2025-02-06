@@ -39,7 +39,8 @@ jobs:
 
     - name: 更新 proxy
       run: |
-        PROXY=$(cat ollama/install/proxy.txt)
+        cp ollama/install/proxy.txt proxy.txt
+        PROXY=$(cat proxy.txt)
         sed -i "s/<proxy_url>/$PROXY/" ollama/install.sh
         sed -i "s/<proxy_url>/$PROXY/" ollama/install-zh_CN.sh
         sed -i "s/<proxy_url>/$PROXY/" ollama/ollama-android.sh
@@ -48,6 +49,7 @@ jobs:
     - name: 删除ollama.txt
       run: |
         rm -f ollama.txt || true
+        rm -f proxy.txt || true
 
     - name: 推送更新
       run: |
