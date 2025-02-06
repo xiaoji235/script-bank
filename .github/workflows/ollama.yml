@@ -18,20 +18,32 @@ jobs:
       run: |
         rm -f ollama/install.sh || true
         rm -f ollama/install-zh_CN.sh || true
+        rm -f ollama/ollama-android.sh || true
+        rm -f ollama/ollama-android-8b.sh || true
 
     - name: 运行 install.py
       run: python ollama/py/install.py > ollama.txt
 
     - name: 创建install.sh
       run: |
-        cp ollama/install.sh.bak ollama/install.sh
-        cp ollama/install-zh_CN.sh.bak ollama/install-zh_CN.sh
+        cp ollama/install/install.sh.bak ollama/install.sh
+        cp ollama/install/install-zh_CN.sh.bak ollama/install-zh_CN.sh
+        cp ollama/install/ollama-android.sh.bak ollama/ollama-android.sh
+        cp ollama/install/ollama-android-8b.sh.bak ollama/ollama-android-8b.sh
 
     - name: 更新 install.sh
       run: |
         OLLAMA=$(cat ollama.txt)
         sed -i "s/<version>/$OLLAMA/" ollama/install.sh
         sed -i "s/<version>/$OLLAMA/" ollama/install-zh_CN.sh
+
+    - name: 更新 proxy
+      run: |
+        PROXY=$(cat ollama/install/proxy.txt)
+        sed -i "s/<proxy_url>/$PROXY/" ollama/install.sh
+        sed -i "s/<proxy_url>/$PROXY/" ollama/install-zh_CN.sh
+        sed -i "s/<proxy_url>/$PROXY/" ollama/ollama-android.sh
+        sed -i "s/<proxy_url>/$PROXY/" ollama/ollama-android-8b.sh
         
     - name: 删除ollama.txt
       run: |
