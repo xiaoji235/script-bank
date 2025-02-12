@@ -15,7 +15,7 @@ repeat_until_success() {
 }
 
 echo "正在安装依赖..."
-repeat_until_success apt install git golang python cmake clang -y
+repeat_until_success apt install git golang python3 cmake clang -y
 
 echo "正在复制仓库..."
 repeat_until_success git clone https://cdn.moran233.xyz/https://github.com/ollama/ollama.git
