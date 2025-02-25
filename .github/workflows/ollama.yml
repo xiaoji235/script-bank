@@ -17,9 +17,13 @@ jobs:
     - name: 删除旧脚本
       run: |
         rm -f ollama/*.sh || true
+        rm -f ollama/install/proxy.txt || true
 
     - name: 运行 install.py
-      run: python ollama/py/install.py > ollama.txt
+      run: |
+        python ollama/py/install.py > ollama.txt
+        python proxy/proxy.py > ollama/install/proxy.txt
+      
 
     - name: 创建install.sh
       run: |
