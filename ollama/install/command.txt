@@ -1,0 +1,1 @@
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget <proxy_url>/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android-8b.sh && bash ollama-android-8b.sh
