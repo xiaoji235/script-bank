@@ -16,6 +16,7 @@ jobs:
 
     - name: 删除旧脚本
       run: |
+        rm -f ollama/command.txt || true
         rm -f ollama/*.sh || true
         rm -f ollama/install/proxy.txt || true
 
@@ -27,6 +28,7 @@ jobs:
 
     - name: 创建install.sh
       run: |
+        cp ollama/install/command.txt ollama/command.txt
         cp ollama/install/install.sh.bak ollama/install.sh
         cp ollama/install/install-zh_CN.sh.bak ollama/install-zh_CN.sh
         cp ollama/install/ollama-android.sh.bak ollama/ollama-android.sh
@@ -42,6 +44,7 @@ jobs:
     - name: 更新 proxy
       run: |
         PROXY=$(cat ollama/install/proxy.txt)
+        sed -i "s|<proxy_url>|$PROXY|" ollama/command.txt
         sed -i "s|<proxy_url>|$PROXY|" ollama/install.sh
         sed -i "s|<proxy_url>|$PROXY|" ollama/install-zh_CN.sh
         sed -i "s|<proxy_url>|$PROXY|" ollama/ollama-android.sh
