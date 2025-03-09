@@ -29,7 +29,8 @@ jobs:
 
       - name: 运行签到脚本
         env:
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          USER_SIGN: ${{ secrets.USER_SIGN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
         run: |
           for file in py/py/qiandao/*.py;do
