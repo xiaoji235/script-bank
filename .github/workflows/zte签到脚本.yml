@@ -25,7 +25,7 @@ jobs:
 
       - name: 删除旧日志
         run: |
-          rm -f py/log/qiandao/*.txt || true
+          rm -f py/log/qiandao/zte.txt || true
 
       - name: 运行签到脚本
         env:
@@ -33,10 +33,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
         run: |
-          for file in py/py/qiandao/*.py;do
-          py_name=$(basename $file .py)
-          python "$file" > "py/log/qiandao/${py_name}.txt"
-          done
+          python py/py/qiandao/zte.py > "py/log/qiandao/zte.txt"
 
       - name: Commit and push if there are changes
         run: |
@@ -44,7 +41,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add -A
           if [[ `git status --porcelain` ]]; then
-            git commit -m "每日签到" && git push
+            git commit -m "ZTE 每日签到" && git push
           else
-            echo "每日签到"
+            echo "ZTE 每日签到"
           fi
