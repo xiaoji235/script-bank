@@ -45,4 +45,5 @@ jobs:
           if [[ `git status --porcelain` ]]; then
             git commit -m "每日签到" && git push
           else
+            echo "每日签到"
           fi
