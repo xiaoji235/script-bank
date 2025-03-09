@@ -10,7 +10,7 @@ user_cookie = os.getenv("USER_COOKIE")
 
 # 自定义请求头
 headers = {
-    "Host": "zhutix.com",
+    "Connection": "close",
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "zh-CN,zh-Hans;q=0.9",
     "Authorization": f"Bearer {auth_token}",
