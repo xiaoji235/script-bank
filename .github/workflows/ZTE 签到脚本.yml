@@ -1,4 +1,4 @@
-name: 签到脚本（每天10：30运行）
+name: ZTE 签到脚本（每天10：30运行）
 
 on:
   workflow_dispatch:
