@@ -1,8 +1,9 @@
 name: 签到脚本（每天10：30运行）
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '30 10 * * *'  # 每天的 10:30 运行
+    - cron: '30 2 * * *'  # 每天的 10:30 运行(UTC+8)
 
 jobs:
   qiandao:
@@ -36,12 +37,12 @@ jobs:
           python "$file" > "py/log/qiandao/${py_name}.txt"
           done
 
-    - name: Commit and push if there are changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        if [[ `git status --porcelain` ]]; then
-          git commit -m "每日签到" && git push
-        else
-        fi
+      - name: Commit and push if there are changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          if [[ `git status --porcelain` ]]; then
+            git commit -m "每日签到" && git push
+          else
+          fi
