@@ -12,6 +12,7 @@ user_cookie = os.getenv("USER_COOKIE")
 headers = {
     "Host": "zhutix.com",
     "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "zh-CN,zh-Hans;q=0.9",
     "Authorization": f"Bearer {auth_token}",
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/131 Version/11.1.1 Safari/605.1.15",
     "Cookie": f"Bearer {user_cookie}"
