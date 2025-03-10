@@ -25,17 +25,24 @@ jobs:
 
       - name: 删除旧日志
         run: |
-          rm -f py/log/qiandao/zte.txt || true
+          rm -f py/log/qiandao/*.txt || true
 
       - name: 运行签到脚本
         env:
+        # ZTE ENV
           USER_SIGN: ${{ secrets.USER_SIGN }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
+        # JD ENV
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JD_DATA: ${{ secrets.JD_DATA }}
         run: |
-          python py/py/qiandao/zte.py > "py/log/qiandao/zte.txt"
+          for file in py/py/qiandao/*.py;do
+          py_name=$(basename $file .py)
+          python "$file" > "py/log/qiandao/${py_name}.txt"
+          done
 
-      - name: Commit and push if there are changes
+      - name: 推送更新及署名
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
