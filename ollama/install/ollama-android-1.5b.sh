@@ -55,5 +55,3 @@ for i in {10..0}; do
     clear
 done
 ollama serve
-# echo "正在部署 deepseek-r1:1.5b 模型..."
-# ollama run deepseek-r1:1.5b
