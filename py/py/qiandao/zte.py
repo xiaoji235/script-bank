@@ -21,14 +21,31 @@ headers = {
     "Accept-Language": "zh-CN,zh-Hans;q=0.9",
 }
 
-# 发送POST请求
-response = requests.post(url, headers=headers)
+# 发送HTTP GET请求
+response = requests.get(url, headers=headers)
 
-# 输出响应状态码
+# 检查请求是否成功（HTTP状态码为200）
 if response.status_code == 200:
-    print("请求成功！")
-    print("响应内容:", response.json())
+    # 解析返回的JSON数据
+    response_data = response.json()
+
+    # 判断 errorcode 的值
+    if response_data['errorcode'] == 0:
+        # 提取并打印 currentCheckInPoint 和 point
+        current_check_in_point = response_data['data']['currentCheckInPoint']
+        current_checkin_days = response_data['data']['checkin_days']
+        point = response_data['data']['point']
+        print("签到成功！")
+        print("累计连续签到" , current_checkin_days , "天，今日获得" , current_check_in_point , "积分, 累计获得", point , "积分！")
+    elif response_data['errorcode'] == '10000':
+        # 打印错误信息
+        print("签到失败！请不要重复签到，或检查env参数！")
+        print(response_data['msg'])
+    else:
+        # 处理其他可能的 errorcode
+        print("未知错误:", response_data)
+        print("签到失败！请检查env参数！")
 else:
-    print(f"请求失败,状态码: {response.status_code}")
-    print("响应内容:", response.text)
+    # 如果请求失败，打印HTTP状态码
+    print(f"请求失败，HTTP状态码: {response.status_code}")
 
