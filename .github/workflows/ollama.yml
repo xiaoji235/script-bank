@@ -16,6 +16,7 @@ jobs:
 
     - name: 删除旧脚本
       run: |
+        rm -f README.md || true
         rm -f ollama/command.txt || true
         rm -f ollama/*.sh || true
         rm -f ollama/install/proxy.txt || true
@@ -29,6 +30,7 @@ jobs:
 
     - name: 创建install.sh
       run: |
+        cp README/README.md README.md
         cp ollama/install/command.txt ollama/command.txt
         cp ollama/install/*.sh ollama/
 
@@ -43,6 +45,7 @@ jobs:
         PROXY=$(cat ollama/install/proxy.txt)
         sed -i "s|<proxy_url>|$PROXY|" ollama/command.txt
         sed -i "s|<proxy_url>|$PROXY|" ollama/*.sh
+        cat ollama/command.txt >> README.md
 
     - name: 推送更新
       run: |
