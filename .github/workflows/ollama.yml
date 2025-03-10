@@ -29,8 +29,7 @@ jobs:
     - name: 创建install.sh
       run: |
         cp ollama/install/command.txt ollama/command.txt
-        for file in *.sh.bak; do
-        cp "$file" "ollama/${file%.bak}"
+        cp ollama/install/*.sh ollama/
         done
 
 
