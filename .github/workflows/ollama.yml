@@ -30,7 +30,6 @@ jobs:
       run: |
         cp ollama/install/command.txt ollama/command.txt
         cp ollama/install/*.sh ollama/
-        done
 
 
     - name: 更新 install.sh
