@@ -19,10 +19,11 @@ jobs:
         rm -f ollama/command.txt || true
         rm -f ollama/*.sh || true
         rm -f ollama/install/proxy.txt || true
+        rm -f ollama/version.txt || true
 
     - name: 运行 install.py
       run: |
-        python ollama/py/version.py > ollama.txt
+        python ollama/py/version.py > ollama/version.txt
         python proxy/proxy.py > ollama/install/proxy.txt
       
 
@@ -42,10 +43,6 @@ jobs:
         PROXY=$(cat ollama/install/proxy.txt)
         sed -i "s|<proxy_url>|$PROXY|" ollama/command.txt
         sed -i "s|<proxy_url>|$PROXY|" ollama/*.sh
-        
-    - name: 删除ollama.txt
-      run: |
-        rm -f ollama.txt || true
 
     - name: 推送更新
       run: |
