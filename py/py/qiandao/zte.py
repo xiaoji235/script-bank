@@ -36,7 +36,7 @@ if response.status_code == 200:
         current_checkin_days = response_data['data']['checkin_days']
         point = response_data['data']['point']
         print("签到成功！")
-        print("累计连续签到" , current_checkin_days , "天，今日获得" , current_check_in_point , "积分, 累计获得", point , "积分！")
+        print("累计签到" , current_checkin_days , "天，今日获得" , current_check_in_point , "积分, 累计获得", point , "积分！")
     elif response_data['errorcode'] == '10000':
         # 打印错误信息
         print("签到失败！请不要重复签到，或检查env参数！")
