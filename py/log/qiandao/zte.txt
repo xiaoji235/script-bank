@@ -1,2 +1,2 @@
 请求成功！
-响应内容: {'errorcode': '10000', 'msg': '会员签到记录保存失败', 'data': {}}
+响应内容: {'errorcode': 0, 'msg': '', 'data': {'checkin_days': 2, 'currentCheckInPoint': '8', 'point': 1017, 'status': 'success'}}
