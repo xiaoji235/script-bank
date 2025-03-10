@@ -1,1 +1,9 @@
-sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget https://gitproxy.click/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android-8b.sh && bash ollama-android-8b.sh
+### 以下是安卓Termux一键安装命令：
+1.5b版本：
+`sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget https://gitproxy.click/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android.sh && bash ollama-android.sh`
+7b版本：
+`sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget https://gitproxy.click/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android-7b.sh && bash ollama-android-7b.sh`
+8b版本：
+`sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget https://gitproxy.click/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android-8b.sh && bash ollama-android-8b.sh`
+14b版本：
+`sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list && pkg update && pkg install wget -y && wget https://gitproxy.click/https://github.com/xiaoji235/script-bank/blob/main/ollama/ollama-android-14b.sh && bash ollama-android-14b.sh`
