@@ -35,7 +35,7 @@ jobs:
 
     - name: 更新 install.sh
       run: |
-        OLLAMA=$(cat ollama.txt)
+        OLLAMA=$(cat ollama/version.txt)
         sed -i "s/<version>/$OLLAMA/" ollama/*.sh
 
     - name: 更新 proxy
