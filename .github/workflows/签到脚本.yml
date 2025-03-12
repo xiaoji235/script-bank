@@ -34,7 +34,8 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
         # JD ENV
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          PT_KEY: ${{ secrets.PT_KEY }}
+          PT_PIN: ${{ secrets.PT_PIN }}
           JD_DATA: ${{ secrets.JD_DATA }}
         run: |
           for file in py/py/qiandao/*.py;do
