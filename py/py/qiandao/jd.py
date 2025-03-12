@@ -4,6 +4,7 @@ import requests
 jd_data = os.getenv("JD_DATA")
 pt_key = os.getenv("PT_KEY")
 pt_pin = os.getenv("PT_PIN")
+bark_key = os.getenv("BARK_KEY")
 
 # 目标URL
 url = "https://api.m.jd.com/client.action"
@@ -43,6 +44,8 @@ if response.status_code == 200:
         # 打印错误信息
         errorMessage = response_data['errorMessage']
         print("错误代码：" + errorMessage)
+        response = requests.post(f"https://api.day.app/{bark_key}/{errorMessage}?icon=https://img14.360buyimg.com/imagetools/jfs/t1/66037/3/24346/9414/64b11b21F51d90361/8f015973cbb7de8d.png")# bark通知
+        
     elif int(response_data['code']) == 1:
         # 打印错误信息
         current_jdb_echo = response_data['echo'] #用户数据错误
