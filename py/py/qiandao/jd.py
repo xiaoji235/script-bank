@@ -1,7 +1,7 @@
 import os
 import requests
 
-jd_data = os.getenv("JD_data")
+jd_data = os.getenv("JD_DATA")
 pt_key = os.getenv("PT_KEY")
 pt_pin = os.getenv("PT_PIN")
 
