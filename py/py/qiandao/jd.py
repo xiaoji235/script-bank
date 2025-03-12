@@ -5,7 +5,7 @@ jd_cookie = os.getenv("JD_COOKIE")
 jd_data = os.getenv("JD_DATA")
 
 # 目标URL
-url = "https://pro.m.jd.com/mall/active/Md9FMi1pJXg2q7qc8CmE9FNYDS4/index.html?stath=54&navh=44&babelChannel=ttt130&tttparams=JYnN32eyJhcmVhQ29kZSI6IjAiLCJnTGF0IjoiMjcuNDU1Njk2Iiwic2NhbGUiOiIzIiwidW5fYXJlYSI6IjE4XzE1ODZfMTU5MV8zMTAzNCIsImRMYXQiOiIiLCJ3aWR0aCI6IjExNzkiLCJwcnN0YXRlIjoiMCIsInBvc0xhdCI6IjI3LjQ1NTY5NiIsImFkZHJlc3NJZCI6IjU2NTUzMzQ5ODkiLCJsYXQiOiIyNy40NTgwNTIiLCJyZnMiOiIwMDAwIiwib3MiOiIxNi42IiwicG9zTG5nIjoiMTEyLjE2NTU4OSIsImdwc19hcmVhIjoiMThfMTU4Nl8xNTkxXzMxMDM0IiwibG5nIjoiMTEyLjE2NjgwMiIsInVlbXBzIjoiMC0wLTAiLCJnTG5nIjoiMTEyLjE2NTU4OSIsIm1vZGVsIjoiaVBob25lMTUsMiIsImRMbmciOiIifQ6%3D%3D"
+url = "https://api.m.jd.com/client.action"
 
 # 自定义请求头
 headers = {
