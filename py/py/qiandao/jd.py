@@ -13,7 +13,7 @@ headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "jdapp;iPhone;13.8.1;;;M/5.0;appBuild/169635;jdSupportDarkMode/1;ef/1;ep/%7B%22ciphertype%22%3A5%2C%22cipher%22%3A%7B%22ud%22%3A%22CtY5DJruZwO0ENPwYwY4ENG0DQOyDJG4YwS5ZQG0ZWOnCQVrZWGyEK%3D%3D%22%2C%22sv%22%3A%22CJYkDq%3D%3D%22%2C%22iad%22%3A%22%22%7D%2C%22ts%22%3A1741589029%2C%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22version%22%3A%221.0.3%22%2C%22appname%22%3A%22com.360buy.jdmobile%22%2C%22ridx%22%3A-1%7D;Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;",
     "Referer": "https://pro.m.jd.com/",
-    "Cookie": f"pt_key={PT_KEY}; pt_pin={PT_PIN};"
+    "Cookie": f"pt_key={pt_key}; pt_pin={pt_pin};"
 
 }
 
