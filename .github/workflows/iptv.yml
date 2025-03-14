@@ -1,0 +1,41 @@
+name: 更新ollama版本
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */48 * * *" # 每隔12h更新版本号
+
+
+jobs:
+  ollama-version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: 删除旧文件
+      run: |
+        rm -f iptv/iptv.m3u || true
+        cp iptv/iptv.m3u.bak iptv/iptv.m3u
+
+    - name: 更新 proxy
+      run: |
+        python proxy/proxy.py > iptv/proxy.txt
+
+    - name: 写入 proxy
+      run: |
+        PROXY=$(cat iptv/proxy.txt)
+        sed -i "s|<proxy_url>|$PROXY|" iptv/iptv.m3u
+        rm -f iptv/proxy.txt || true
+
+    - name: 推送更新
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        if [[ `git status --porcelain` ]]; then
+          git commit -m "版本更新" && git push
+        else
+          echo "版本无变化。"
+        fi
