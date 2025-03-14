@@ -1,4 +1,4 @@
-name: 更新ollama版本
+name: 更新iptv地址
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git add -A
         if [[ `git status --porcelain` ]]; then
-          git commit -m "版本更新" && git push
+          git commit -m "iptv地址更新" && git push
         else
           echo "版本无变化。"
         fi
