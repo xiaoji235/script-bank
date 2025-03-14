@@ -17,17 +17,10 @@ jobs:
     - name: 删除旧文件
       run: |
         rm -f iptv/iptv.m3u || true
-        cp iptv/iptv.m3u.bak iptv/iptv.m3u
 
-    - name: 更新 proxy
+    - name: 更新 iptv
       run: |
-        python proxy/proxy.py > iptv/proxy.txt
-
-    - name: 写入 proxy
-      run: |
-        PROXY=$(cat iptv/proxy.txt)
-        sed -i "s|<proxy_url>|$PROXY|" iptv/iptv.m3u
-        rm -f iptv/proxy.txt || true
+        curl -s "https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.m3u" >> iptv/iptv.m3u
 
     - name: 推送更新
       run: |
