@@ -1,1 +1,1 @@
-签到成功， 恭喜您获得 1 京豆
+{'code': '0', 'data': {'signedRan': 'B', 'status': '2', 'beanUserType': 1, 'awardType': '1', 'dailyAward': {'type': '1', 'title': '今天已签到，', 'subTitle': '获得奖励', 'beanAward': {'beanCount': '1', 'beanImgUrl': 'https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png'}}, 'continuousDays': '8', 'tomorrowSendBeans': 0}}
