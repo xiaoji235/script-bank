@@ -31,14 +31,9 @@ if response.status_code == 200:
     if int(response_data['code']) == 0:
         if int(response_data['data']['status']) == 1:
         # 提取并打印 currentCheckInPoint 和 point
-            current_jdb_title = response_data['data']['dailyAward']['title'] #签到成功，
-            current_jdb_subTitle = response_data['data']['dailyAward']['subTitle'] # 恭喜你获得
-            current_jdb_beancount = response_data['data']['dailyAward']['beanAward']['beanCount'] #若干京豆
-            print(current_jdb_title , current_jdb_subTitle , current_jdb_beancount , f"京豆") #签到成功，恭喜你获得x京豆
+            print(response_data) #签到成功，恭喜你获得x京豆
         elif int(response_data['data']['status']) == 2:
-            current_jdb_continuityAward = response_data['data']['continuityAward']['title'] #今天已签到，获得奖励
-            current_jdb_beanCount = response_data['data']['continuityAward']['beanAward']['beanCount'] #若干京豆
-            print(current_jdb_continuityAward , current_jdb_beanCount , f"京豆")
+            print(response_data)
 
     elif int(response_data['code']) == 3:
         # 打印错误信息
