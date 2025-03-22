@@ -37,6 +37,8 @@ jobs:
           PT_KEY: ${{ secrets.PT_KEY }}
           PT_PIN: ${{ secrets.PT_PIN }}
           JD_DATA: ${{ secrets.JD_DATA }}
+        # znds ENV
+          ZNDS_COOKIE: ${{ secrets.ZNDS_COOKIE }}
         run: |
           for file in py/py/qiandao/*.py;do
           py_name=$(basename $file .py)
