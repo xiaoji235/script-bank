@@ -1,1 +1,1 @@
-{'code': '0', 'data': {'signedRan': 'B', 'status': '1', 'beanUserType': 1, 'awardType': '1', 'dailyAward': {'type': '1', 'title': '签到成功，', 'subTitle': '恭喜您获得', 'beanAward': {'beanCount': '2', 'beanImgUrl': 'https://m.360buyimg.com/njmobilecms/jfs/t23452/19/1797778090/8622/14e40996/5b69974eN9880f531.png'}}, 'continuousDays': '17', 'tomorrowSendBeans': 0}}
+未知错误，服务器返回数据: {'code': '402', 'message': '活动现在挤不进去呀，待会再来试试吧'}
