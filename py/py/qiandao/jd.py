@@ -45,6 +45,12 @@ if response.status_code == 200:
         # 打印错误信息
         current_jdb_echo = response_data['echo'] #用户数据错误
         print("用户数据错误，请检查ENV参数！错误代码:"+ current_jdb_echo)
+    elif int(response_data['code']) == 402:
+        # 打印错误信息
+        err_message = response_data['message'] #活动数据错误
+        err_code = response_data['code']
+        print("错误代码：" + err_code + "，" + err_message)
+        response = requests.post(f"https://api.day.app/{bark_key}/活动到期，请更新请求体?icon=https://img14.360buyimg.com/imagetools/jfs/t1/66037/3/24346/9414/64b11b21F51d90361/8f015973cbb7de8d.png")
     else:
         # 处理其他可能的 errorcode
         print("未知错误，服务器返回数据:", response_data)
