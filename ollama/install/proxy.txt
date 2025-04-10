@@ -1,1 +1,1 @@
-https://git.speed-ssr.tech
+https://ghproxy.monkeyray.net
