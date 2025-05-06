@@ -2,6 +2,7 @@ import os
 import requests
 
 JLC_AccessToken = os.getenv("JLC_ACCESSTOKEN")
+bark_key = os.getenv("BARK_KEY")
 
 # 目标URL
 url = "https://m.jlc.com/api/activity/sign/signIn?source=2"
