@@ -29,6 +29,8 @@ jobs:
 
       - name: 运行签到脚本
         env:
+        # bark推送
+          BARK_KEY: ${{ secrets.BARK_KEY }}
         # ZTE ENV
           USER_SIGN: ${{ secrets.USER_SIGN }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
