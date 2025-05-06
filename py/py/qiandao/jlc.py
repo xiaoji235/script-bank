@@ -9,7 +9,7 @@ url = "https://m.jlc.com/api/activity/sign/signIn?source=2"
 
 # 自定义请求头
 headers = {
-    "content-type": "application/json",、
+    "content-type": "application/json",
     "X-JLC-AccessToken": f"{JLC_AccessToken}",
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.57(0x18003932) NetType/WIFI Language/zh_CN",
 
