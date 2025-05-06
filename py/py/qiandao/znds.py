@@ -5,7 +5,7 @@ znds_cookie = os.getenv("ZNDS_COOKIE")
 # znds_data = os.getenv("ZNDS_DATA")
 
 # 目标URL
-url = "https://www.znds.com/plugin.php?id=ljdaka:daka&action=msg&formhash=80f19a68&infloat=yes&handlekey=ljdaka&inajax=1&ajaxtarget=fwin_content_ljdaka"
+url = "https://www.znds.com/plugin.php?id=ljdaka:daka&action=msg&formhash=27b0cfd5&infloat=yes&handlekey=ljdaka&inajax=1&ajaxtarget=fwin_content_ljdaka"
 
 # 自定义请求头
 headers = {
