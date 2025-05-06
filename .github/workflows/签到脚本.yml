@@ -33,10 +33,8 @@ jobs:
           USER_SIGN: ${{ secrets.USER_SIGN }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
-        # JD ENV
-          PT_KEY: ${{ secrets.PT_KEY }}
-          PT_PIN: ${{ secrets.PT_PIN }}
-          JD_DATA: ${{ secrets.JD_DATA }}
+        # jlc ENV
+          JLC_ACCESSTOKEN: ${{ secrets.JLC_ACCESSTOKEN }}
         # znds ENV
           ZNDS_COOKIE: ${{ secrets.ZNDS_COOKIE }}
         run: |
