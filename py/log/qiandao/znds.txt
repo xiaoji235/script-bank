@@ -11,6 +11,6 @@
 .qdsmilea li:hover{cursor:pointer;}
 .alert_info {background-image: url(source/plugin/ljdaka/images/info.gif);}
 </style>
-<div class="c altw"><div class="alert_info"><p>您已累计打卡3天获得4金币.</p><p>预计明日打卡您将获得5金币.</p></div></div>	
+<div class="c altw"><div class="alert_info"><p>您已累计打卡5天获得6金币.</p><p>预计明日打卡您将获得7金币.</p></div></div>	
 </div>
 <p class="o pns"><span class="z xg1"><a style="color:#369 !important;text-decoration: underline !important;" target="_blank" href=""></a></span><button class="pn pnc" value="true" onclick="window.location.href='plugin.php?id=ljdaka:ranklist'"><strong>确定</strong></button></p>]]></root>
