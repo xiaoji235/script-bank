@@ -1,1 +1,6 @@
-签到失败，错误码: 401，cookie无效！
+签到成功！
+{
+  "success": false,
+  "code": 500,
+  "message": "今天已经签到过了"
+}
