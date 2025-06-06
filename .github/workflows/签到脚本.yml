@@ -36,7 +36,7 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           USER_COOKIE: ${{ secrets.USER_COOKIE }}
         # jlc ENV
-          JLC_ACCESSTOKEN: ${{ secrets.JLC_ACCESSTOKEN }}
+          JLCBBS_COOKIE: ${{ secrets.JLCBBS_COOKIE }}
         # znds ENV
           ZNDS_COOKIE: ${{ secrets.ZNDS_COOKIE }}
         run: |
