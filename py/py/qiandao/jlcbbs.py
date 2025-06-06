@@ -12,6 +12,7 @@ jlcbbs_cookie = os.getenv("JLCBBS_COOKIE")
 headers = {
     "content-type": "application/json",
     "cookie": jlcbbs_cookie,
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
 }
 
 # 目标 URL 和请求数据
