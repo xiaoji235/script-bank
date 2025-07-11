@@ -32,6 +32,7 @@ jobs:
         # bark推送
           BARK_KEY: ${{ secrets.BARK_KEY }}
         # ZTE ENV
+          ZTEMALL_DATA: ${{ secrets.ZTEMALL_DATA }}
           ZTEMALL_SIGN: ${{ secrets.ZTEMALL_SIGN }}
           ZTEMALL_TOKEN: ${{ secrets.ZTEMALL_TOKEN }}
           ZTEMALL_COOKIE: ${{ secrets.ZTEMALL_COOKIE }}
