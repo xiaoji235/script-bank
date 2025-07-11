@@ -16,7 +16,7 @@ headers = {
     "Cookie": f"Bearer {ztemall_cookie}",
     "Sec-Fetch-Mode": "cors",
     "Accept": "*/*",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0",
     "Referer": "https://www.ztemall.com/m/pages/member/index",
     "Sec-Fetch-Dest": "empty",
     "Accept-Language": "zh-CN,zh-Hans;q=0.9",
