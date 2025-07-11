@@ -1,18 +1,19 @@
 import os
 import requests
 
-user_sign = os.getenv("USER_SIGN")
-access_token = os.getenv("ACCESS_TOKEN")
-user_cookie = os.getenv("USER_COOKIE")
+ztemall_sign = os.getenv("ZTEMALL_SIGN")
+ztemall_token = os.getenv("ZTEMALL_TOKEN")
+ztemall_cookie = os.getenv("ZTEMALL_COOKIE")
 
 # 目标URL
-url = f"https://www.ztemall.com/index.php/topapi?method=member.checkIn.add&format=json&v=v1&sign={user_sign}&accessToken={access_token}"
+url = f"https://www.ztemall.com/index.php/topapi/?accessToken={ztemall_token}&format=json&v=v1&method=member.index&sign={ztemall_sign}"
+# url = f"https://www.ztemall.com/index.php/topapi?method=member.checkIn.add&format=json&v=v1&sign={user_sign}&accessToken={access_token}"
 
 # 自定义请求头
 headers = {
     "Sec-Fetch-Site": "same-origin",
     "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": f"Bearer {user_cookie}",
+    "Cookie": f"Bearer {ztemall_cookie}",
     "Sec-Fetch-Mode": "cors",
     "Accept": "*/*",
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
