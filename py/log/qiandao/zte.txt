@@ -1,1 +1,1 @@
-请求出错: HTTPSConnectionPool(host='www.ztemall.com', port=443): Max retries exceeded with url: /index.php/topapi (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fca04d12cd0>, 'Connection to www.ztemall.com timed out. (connect timeout=None)'))
+已签到0天，获得0积分，已拥有0积分
