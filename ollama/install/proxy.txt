@@ -1,1 +1,1 @@
-https://hub.gitmirror.com
+https://ghproxy.gpnu.org
