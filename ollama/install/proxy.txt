@@ -1,1 +1,1 @@
-https://cf.ghproxy.cc
+https://ghproxy.cfd
