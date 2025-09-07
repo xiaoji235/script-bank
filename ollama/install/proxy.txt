@@ -1,1 +1,1 @@
-https://ghproxy.imciel.com
+http://github-proxy.teach-english.tech
