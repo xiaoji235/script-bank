@@ -18,7 +18,7 @@ echo "正在安装依赖..."
 repeat_until_success apt install git golang python cmake clang -y
 
 echo "正在复制仓库..."
-repeat_until_success git clone https://gh-proxy.net/https://github.com/ollama/ollama.git
+repeat_until_success git clone https://github.cnxiaobai.com/https://github.com/ollama/ollama.git
 
 cd ollama || { echo "更改目录失败"; exit 1; }
 
