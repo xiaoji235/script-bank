@@ -80,7 +80,7 @@ $SUDO install -o0 -g0 -m755 -d $BINDIR
 $SUDO install -o0 -g0 -m755 -d "$OLLAMA_INSTALL_DIR"
 status "Downloading Linux ${ARCH} bundle"
 curl --fail --show-error --location --progress-bar \
-    "https://ghpxy.hwinzniej.top/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
+    "https://gh.llkk.cc/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
     $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
 if [ "$OLLAMA_INSTALL_DIR/bin/ollama" != "$BINDIR/ollama" ] ; then
     status "Making ollama accessible in the PATH in $BINDIR"
@@ -92,12 +92,12 @@ if [ -f /etc/nv_tegra_release ] ; then
     if grep R36 /etc/nv_tegra_release > /dev/null ; then
         status "Downloading JetPack 6 components"
         curl --fail --show-error --location --progress-bar \
-            "https://ghpxy.hwinzniej.top/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-jetpack6.tgz${VER_PARAM}" | \
+            "https://gh.llkk.cc/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-jetpack6.tgz${VER_PARAM}" | \
             $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
     elif grep R35 /etc/nv_tegra_release > /dev/null ; then
         status "Downloading JetPack 5 components"
         curl --fail --show-error --location --progress-bar \
-            "https://ghpxy.hwinzniej.top/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-jetpack5.tgz${VER_PARAM}" | \
+            "https://gh.llkk.cc/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-jetpack5.tgz${VER_PARAM}" | \
             $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
     else
         warning "Unsupported JetPack version detected.  GPU may not be supported"
@@ -223,7 +223,7 @@ fi
 if check_gpu lspci amdgpu || check_gpu lshw amdgpu; then
     status "Downloading Linux ROCm ${ARCH} bundle"
     curl --fail --show-error --location --progress-bar \
-        "https://ghpxy.hwinzniej.top/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-rocm.tgz${VER_PARAM}" | \
+        "https://gh.llkk.cc/https://github.com/ollama/ollama/releases/download/v0.12.10/ollama-linux-${ARCH}-rocm.tgz${VER_PARAM}" | \
         $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
 
     install_success
