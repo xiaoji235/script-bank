@@ -80,7 +80,7 @@ $SUDO install -o0 -g0 -m755 -d $BINDIR
 $SUDO install -o0 -g0 -m755 -d "$OLLAMA_INSTALL_DIR"
 status "正在下载 Linux ${ARCH} 安装包"
 curl --fail --show-error --location --progress-bar \
-    "https://gh.1k.ink/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
+    "https://gp.871201.xyz/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
     $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
 if [ "$OLLAMA_INSTALL_DIR/bin/ollama" != "$BINDIR/ollama" ] ; then
     status "Making ollama accessible in the PATH in $BINDIR"
@@ -92,12 +92,12 @@ if [ -f /etc/nv_tegra_release ] ; then
     if grep R36 /etc/nv_tegra_release > /dev/null ; then
         status "Downloading JetPack 6 components"
         curl --fail --show-error --location --progress-bar \
-            "https://gh.1k.ink/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-jetpack6.tgz${VER_PARAM}" | \
+            "https://gp.871201.xyz/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-jetpack6.tgz${VER_PARAM}" | \
             $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
     elif grep R35 /etc/nv_tegra_release > /dev/null ; then
         status "Downloading JetPack 5 components"
         curl --fail --show-error --location --progress-bar \
-            "https://gh.1k.ink/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-jetpack5.tgz${VER_PARAM}" | \
+            "https://gp.871201.xyz/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-jetpack5.tgz${VER_PARAM}" | \
             $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
     else
         warning "不支持该 JetPack 版本.  GPU 可能不支持，这边建议换驱动，实在不行换显卡吧！"
@@ -223,7 +223,7 @@ fi
 if check_gpu lspci amdgpu || check_gpu lshw amdgpu; then
     status "正在下载 Linux ROCm ${ARCH} bundle"
     curl --fail --show-error --location --progress-bar \
-        "https://gh.1k.ink/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-rocm.tgz${VER_PARAM}" | \
+        "https://gp.871201.xyz/https://github.com/ollama/ollama/releases/download/v0.13.0/ollama-linux-${ARCH}-rocm.tgz${VER_PARAM}" | \
         $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
 
     install_success
