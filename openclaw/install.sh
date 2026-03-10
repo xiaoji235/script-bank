@@ -1972,7 +1972,7 @@ resolve_openclaw_bin() {
 
 install_openclaw_from_git() {
     local repo_dir="$1"
-    local repo_url="https://gh.llkk.cc/https://github.com/openclaw/openclaw.git"
+    local repo_url="https://gh.927223.xyz/https://github.com/openclaw/openclaw.git"
 
     if [[ -d "$repo_dir/.git" ]]; then
         ui_info "Installing OpenClaw from git checkout: ${repo_dir}"
